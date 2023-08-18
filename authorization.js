@@ -17,7 +17,7 @@ const jwt = require("jsonwebtoken");
                     if(error){
                         res.json({
                             error : true,
-                            message : "Invalid token or expired"
+                            message : error.message
                         })
                     }else{
                         next();
@@ -29,7 +29,7 @@ const jwt = require("jsonwebtoken");
                         error : true,
                         message : "invalid type of token please use bearer or Bearer"
                 })
-        }
+            }
           }catch(e){
                 res.json({
                     error : true,

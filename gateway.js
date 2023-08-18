@@ -35,8 +35,8 @@ gateway.use(cors());
 gateway.use(express.urlencoded({extended : true}));
 gateway.use(helmet());
 gateway.use(rateLimit({
-    windowMs : 15 * 60 * 1000,
-    max : 100
+    windowMs : 2 * 60 * 1000,
+    max : 500
 }));
 const load_handler = require('./loadbalancer');
 const {discover_service_urls,playlist_service_urls,trending_service_urls,favourite_service_urls} = require('./serverUrl');
